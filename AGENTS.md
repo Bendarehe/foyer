@@ -19,7 +19,7 @@ shared **state register**, and drives the journey. Portable *multiagent*: one op
 scripts), thin per-tool adapters. Devs run it on Claude Code, POs on ChatGPT/Qwen, both on the
 **same committed state register**.
 
-- Launcher: `pilote/BOOTSTRAP.md` · Dispatcher: `pilote/parcours.md`
+- Launcher: `pilote/BOOTSTRAP.md` (Claude Code, from this repo's root: `/foyer`) · Dispatcher: `pilote/parcours.md`
 - Shared state (PO↔dev source of truth): `pilote/state.template.md`
 - Irreversible-point arbitration (modality, never destination): `pilote/arbitrage.md`
 - Gate CLI contract (stable names, exit codes): `pilote/gates/README.md`

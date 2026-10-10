@@ -3,6 +3,16 @@
 Fin adaptateur : il **pointe** vers le cœur (`pilote/parcours.md`, `journeys/`, `roles/`,
 le registre). Aucune logique métier ici.
 
+## Depuis le dépôt Foyer (rien à installer)
+La racine du dépôt versionne `.claude/commands/foyer.md` : ouvrir Claude Code à la racine et taper
+**`/foyer`** (optionnellement suivi de la description de l'app) exécute `pilote/BOOTSTRAP.md`.
+Le projet cible est créé **à côté** du dépôt Foyer (`../<nom-du-projet>`), jamais dedans ; relancer
+`/foyer` propose de reprendre un registre voisin existant. Pour un travail long, ouvrir ensuite la
+session dans le projet cible (ou `/add-dir <cible>`) afin d'éviter les demandes de permission.
+
+`/foyer-status`, `/foyer-next` et `/foyer-bascule` sont également disponibles à la racine : elles
+renvoient aux commandes ci-dessous et retrouvent le registre dans le projet cible voisin.
+
 ## Installation dans un projet
 Rendre les commandes et sous-agents visibles de Claude Code (copie ou lien) :
 

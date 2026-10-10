@@ -59,7 +59,8 @@ Foyer sépare **trois choses** que rien ne t'oblige à savoir assembler toi-mêm
 ### 1. Lancer le pilotage (aucune compétence de dev requise)
 
 Clone ce dépôt, puis **donne `pilote/BOOTSTRAP.md` à ton agent** et décris ton app en langage courant
-(« je veux une todo list avec une interface »). L'agent :
+(« je veux une todo list avec une interface »). Dans **Claude Code**, ouvert à la racine de ce dépôt,
+une commande suffit : `/foyer je veux une todo list avec une interface`. L'agent :
 
 1. lit le cœur (`pilote/parcours.md`, `pilote/defaults.md`), **sonde ton environnement** et choisit
    le substrat (Docker si besoin) — **tu n'installes rien** ;

@@ -52,13 +52,15 @@ Flux de bout en bout : **`bmad/`** (Conception, pipeline TOGAF A–F → backlog
 
 `pilote/` ne réinvente rien : il **séquence** `skills/`, `personas/` et `bmad/` en trois parcours pilotables par des agents hétérogènes.
 
-- Point d'entrée : **`pilote/BOOTSTRAP.md`** (à donner à l'agent) → pose **Q0** (nouveau projet / rétrofit / release) et crée un **registre d'état partagé**.
+- Point d'entrée : **`pilote/BOOTSTRAP.md`** (à donner à l'agent ; dans Claude Code, à la racine de ce dépôt : **`/foyer`**) → pose **Q0** (nouveau projet / rétrofit / release) et crée un **registre d'état partagé**.
 - Dispatcher : `pilote/parcours.md` ; parcours : `pilote/journeys/` ; rôles exécutables : `pilote/roles/`.
 - **Registre d'état** (`pilote/state.template.md`) = source de vérité **commitée**, partagée entre dev (Claude Code) et PO (ChatGPT/Qwen). Portable multiagent : un cœur ouvert (Markdown + scripts) + de fins adaptateurs par outil dans `pilote/adapters/{claude,generic,opencode}/`.
 - Arbitrage des points irréversibles : `pilote/arbitrage.md` (on arbitre la **modalité**, jamais la destination).
 - **Contrat de gates** (`pilote/gates/README.md`) : un gate = **une commande CLI stable** avec exit code (0 = 🟢, ≠0 = 🔴), mêmes commandes en local et en CI. Les commandes exactes vivent dans l'`AGENTS.md` du **projet cible**, pas ici.
 
 Adaptateur Claude Code (`pilote/adapters/claude/`) : commandes `.claude/commands/` (`/foyer-demarrer`, `/foyer-status`, `/foyer-next`, `/foyer-bascule`) et sous-agents `.claude/agents/` (un par rôle). Ces commandes ne sont qu'une **porte d'entrée** ; le comportement est défini par le cœur, identique quel que soit le runtime.
+
+**`/foyer`** (`.claude/commands/foyer.md`, versionné à la racine) lance le pilote directement depuis ce dépôt : fin pointeur vers `pilote/BOOTSTRAP.md`, qui ajoute seulement la règle « le projet cible vit **à côté** du dépôt Foyer, jamais dedans » (et la reprise d'un registre voisin existant). Ne pas y recopier les étapes du bootstrap. `/foyer-status`, `/foyer-next` et `/foyer-bascule` y sont aussi installées, sur le même principe : de fins pointeurs vers `pilote/adapters/claude/commands/<nom>.md` qui n'ajoutent que la localisation du projet cible (seul `foyer-demarrer` n'est pas dupliqué, `/foyer` le remplace).
 
 ## `tools/` vs `skills/`
 

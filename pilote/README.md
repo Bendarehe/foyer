@@ -35,7 +35,9 @@ quel est le contexte ? Puis il route :
 - **Dev sur Claude Code** → les commandes [`adapters/claude/commands/`](adapters/claude/commands/)
   (`/foyer-demarrer`, `/foyer-status`, `/foyer-next`, `/foyer-bascule`) et les sous-agents
   [`adapters/claude/agents/`](adapters/claude/agents/) exécutent les étapes. Ils opèrent sur
-  **le même registre d'état** que le PO.
+  **le même registre d'état** que le PO. Depuis la racine du dépôt Foyer, **`/foyer`** lance le
+  bootstrap sans rien installer ; `/foyer-status`, `/foyer-next` et `/foyer-bascule` y sont aussi
+  disponibles.
 - **Runtime OpenCode** → voir [`adapters/opencode/README.md`](adapters/opencode/README.md)
   (extension du `opencode.json` existant).
 
